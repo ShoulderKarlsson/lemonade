@@ -1,7 +1,9 @@
 import { cmd } from '../utils/command'
-const network = () => {
 
-  // Getting name of connected wifi
+/**
+ * Presents name for connected wifi
+ */
+const network = () => {
   const command = 'iwgetid -r'
   return cmd(command)
 }
