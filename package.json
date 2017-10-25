@@ -1,0 +1,12 @@
+{
+  "name": "lemon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "backpack"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "backpack-core": "^0.4.3"
+  }
+}
