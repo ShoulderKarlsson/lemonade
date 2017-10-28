@@ -5,6 +5,8 @@ import { workspaceWidget } from './widgets/workspace'
 import { volumeWidget } from './widgets/volume'
 
 async function main() {
+
+  // Widgets that will be presented in lemonbar
   const widgets = [
     workspaceWidget,
     clockWidget,
