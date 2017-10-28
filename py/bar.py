@@ -1,5 +1,9 @@
+import subprocess
 from datetime import datetime
 from json import loads
+
+def cmd(command):
+  return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 def battery():
   capacity = cmd('cat /sys/class/power_supply/BAT0/capacity')
@@ -20,14 +24,18 @@ def clock():
   minute = "0%s" % (datetime.now().minute) if current_minute < 10 else current_minute
   return '{}:{}'.format(datetime.now().hour, minute)
 
+
+def network():
+  return cmd('iwgetid -r').strip()
+
 def main():
   widgets = [
     workspaces,
+    network,
     volume,
     battery,
     clock
   ]
-
   # String buffer for bar
   buffer = reduce(lambda acc, curr: "%s %s" % (acc, curr()), widgets, '')
   print buffer.strip()
