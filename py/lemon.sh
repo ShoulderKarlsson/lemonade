@@ -1,4 +1,4 @@
 while :; do
   python bar.py
-  sleep 1
+  sleep ".5s"
 done
