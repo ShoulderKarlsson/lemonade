@@ -37,8 +37,10 @@ def main():
         battery,
         clock
     ]
+
+    padding = '  '
     # String buffer for bar
-    buf = reduce(lambda acc, curr: "%s %s" % (acc, curr()), widgets, '')
+    buf = reduce(lambda acc, curr: "%s %s %s" % (acc, padding, curr()), widgets, '')
     print buf.strip()
 
 if __name__ == '__main__':
